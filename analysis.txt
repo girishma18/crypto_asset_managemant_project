@@ -1,0 +1,222 @@
+
+each trader channel messages
++------------+--------+
+|   trader_id|count(1)|
++------------+--------+
+|directcrypto|  140445|
+|    yocrypto|  398837|
++------------+--------+
+
+
+5 years data
++----------------------+----------------------+
+|min(message_timestamp)|max(message_timestamp)|
++----------------------+----------------------+
+|  2017-12-24 20:16:...|  2021-12-20 14:23:...|
++----------------------+----------------------+
+
+The data is of 1425 days
++---------------------------------+
+|count(DISTINCT message_timestamp)|
++---------------------------------+
+|                             1425|
++---------------------------------+
+
+no of records in each year
++-----------------------+--------+
+|year(message_timestamp)|count(1)|
++-----------------------+--------+
+|                   2018|  117857|
+|                   2019|  141978|
+|                   2020|  133610|
+|                   2017|    4900|
+|                   2021|  140937|
++-----------------------+--------+
+
+18633 users/groups/etc
++---------------+----------------------------+
+|min(message_id)|max(CAST(message_id AS INT))|
++---------------+----------------------------+
+|              1|                       18633|
++---------------+----------------------------+
+
+active users
++--------------------------+
+|count(DISTINCT message_id)|
++--------------------------+
+|                     16898|
++--------------------------+              
+
+Took word count for 10000 records
++------------+---+
+|       words| ct|
++------------+---+
+|      profit|181|
+|           -|180|
+|          at|166|
+|       after|155|
+|     Minutes|154|
+|           ⏰|154|
+|   📈Period:|148|
+|        take|148|
+|      Closed|147|
+|           ⚠|146|
+|    stoploss|144|
+|    reaching|144|
+|    ✅Profit:|140|
+| Take-Profit|140|
+|       Hours|140|
+|      target|140|
+|     Binance|128|
+|           1|108|
+|       ByBit| 91|
+|          is| 82|
+|         the| 82|
+|         was| 81|
+|        Days| 75|
+|      Signal| 75|
+|         and| 74|
+|      Crypto| 74|
+|          Yo| 73|
+|    Platinum| 73|
+|     Channel| 73|
+|Club™Action:| 73|
+|       name:| 73|
+|      posted| 71|
+|          📉| 67|
+|    Stoploss| 67|
+|      ⛔Loss:| 67|
+|           =| 63|
+|    trailing| 62|
+|           2| 58|
+|          to| 57|
+|           a| 54|
+|        Long| 52|
+|       Zone:| 51|
+|    leverage| 45|
+|       entry| 45|
+|          on| 45|
+|         FTX| 45|
+|          it| 44|
+|         not| 43|
+|        zone| 42|
+|           3| 42|
++------------+---+
+
+Took word count for 100000 records
++------------+----+
+|       words|  ct|
++------------+----+
+|           -|2756|
+|     Minutes|2216|
+|           ⏰|2216|
+|   📈Period:|1790|
+|      target|1712|
+|       Hours|1702|
+|    ✅Profit:|1692|
+| Take-Profit|1692|
+|     Binance|1604|
+|          at|1343|
+|           1|1326|
+|      profit|1035|
+|         FTX|1011|
+|          of| 995|
+|        Days| 953|
+|       after| 888|
+|        take| 884|
+|           ⚠| 854|
+|      Closed| 854|
+|    stoploss| 851|
+|    reaching| 851|
+|         the| 818|
+|         was| 795|
+|           2| 759|
+|          in| 757|
+|          is| 752|
+|          to| 747|
+|      Crypto| 732|
+|    trailing| 729|
+|      Signal| 727|
+|          Yo| 725|
+|         and| 722|
+|     Channel| 721|
+|Club™Action:| 721|
+|       name:| 721|
+|    Platinum| 721|
+|        your| 699|
+|      posted| 687|
+|       entry| 657|
+|        zone| 628|
+|        this| 623|
+|           a| 484|
+|           3| 441|
+|           0| 440|
+|       ByBit| 433|
+|    ✅Period:| 426|
+|     Entered| 426|
+|         not| 417|
+|         you| 383|
+|          on| 379|
++------------+----+
+
+Took word count for all records
++-----------+------+
+|      words|    ct|
++-----------+------+
+|          -|399804|
+|         to|239948|
+|         is|215416|
+|         at|188826|
+|         of|179511|
+|          1|159419|
+|     Target|158583|
+|        may|149618|
+|           |138998|
+|         in|136855|
+|        and|129674|
+|       your|120176|
+|   stoploss|118891|
+|        the|116886|
+|       this|108987|
+|  stop-loss|104540|
+|   position|103087|
+|       move|101821|
+|          a|100137|
+|        You| 97995|
+|     target| 97221|
+|       once| 94806|
+|          2| 94587|
+|     profit| 93112|
+|      done.| 91813|
+|    Minutes| 90484|
+|          ⏰| 90484|
+|  📈Period:| 89354|
+|Take-Profit| 88109|
+|   ✅Profit:| 88037|
+|      entry| 87494|
+|          =| 85458|
+|       loss| 79495|
+|      Hours| 79217|
+|         on| 75253|
+|        for| 74351|
+|      trade| 65599|
+|      price| 64892|
+|       zone| 64550|
+|          || 59161|
+|         be| 58000|
+|       keep| 57616|
+|       only| 57113|
+|         we| 56794|
+|        you| 55831|
+|       Stop| 54319|
+|  positions| 54151|
+|         ⭐️| 53347|
+|       open| 52179|
+|       stop| 51559|
++-----------+------+
+
+
+Based on the most repeated words and our problem statement...some of the critical featured are-
+message_id, message_timestamp, trader_id, coin, long/short, leverage, current price, entry, profits/loss, stop loss, take_profit_level, isOverLeverageOk, trend(bull or bear), action_to_take(close or keep), period_to_invest, trading_platform, current_trade_status(closed/open), information_type (advisor/investor/none of them).
+
+
