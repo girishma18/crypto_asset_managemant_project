@@ -19,7 +19,7 @@ def run_cmd(args_list):
 #  function to retrieve today's csv source files
 def get_todays_source_files():
     # running the below command to get the today's source files
-    args = ["find", "\'../Bezant-Practical-Exam/source\'", "-mtime", "-1", "-type", "f", "-print"]
+    args = ["find", "\'../resources/source\'", "-mtime", "-1", "-type", "f", "-print"]
     ret, out, err = run_cmd(args)
 
     if ret==0:
@@ -70,7 +70,7 @@ if __name__ == '__main__':
     source_df.show()
 
     # reading traders dimension data into a dataframe
-    traders_df = reader.csv_reader(spark, "../Bezant-Practical-Exam/dim/traders/*.csv",
+    traders_df = reader.csv_reader(spark, "../resources/dim/traders/*.csv",
                                    traders_schema)
     traders_df.show()
 
@@ -100,12 +100,12 @@ if __name__ == '__main__':
     if traders_to_insert.count() != 0:
 
         # write the new traders details to the tarders dimension
-        writer.csv_writer(traders_to_insert, "../Bezant-Practical-Exam/dim/traders/",
+        writer.csv_writer(traders_to_insert, "../resources/dim/traders/",
                           "append", 'true')
 
         # reading updated traders dimension data into a dataframe
         traders_df_updated = reader.csv_reader(spark,
-                                               "../Bezant-Practical-Exam/dim/traders/*.csv",
+                                               "../resources/dim/traders/*.csv",
                                                traders_schema)
         traders_df_updated.show()
     else:
@@ -121,5 +121,5 @@ if __name__ == '__main__':
     source_df_stg_updated.show()
 
     # source load to fact
-    writer.csv_writer(source_df_stg_updated, "../Bezant-Practical-Exam/fact/", "append",
+    writer.csv_writer(source_df_stg_updated, "../resources/fact/", "append",
                       'false')
